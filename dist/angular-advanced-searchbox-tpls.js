@@ -400,8 +400,8 @@ angular.module('angular-advanced-searchbox', [])
                     var supportedInputTypes = ['text', 'search', 'tel', 'url', 'email', 'password', 'number'];
 
 
-                    var container = angular.element('<div style="position: fixed; top: -9999px; left: 0px;"></div>');
-                    var shadow = angular.element('<span style="white-space:pre;"></span>');
+                    var container = $('<div style="position: fixed; top: -9999px; left: 0px;"></div>');
+                    var shadow = $('<span style="white-space:pre;"></span>');
 
                     var maxWidth = $element.css('maxWidth') === 'none' ? $element.parent().innerWidth() : $element.css('maxWidth');
                     $element.css('maxWidth', maxWidth);
@@ -415,7 +415,7 @@ angular.module('angular-advanced-searchbox', [])
                         shadow.css(css, $element.css(css));
                     });
 
-                    angular.element('body').append(container.append(shadow));
+                    $('body').append(container.append(shadow));
 
                     function resize() {
                         $timeout(function() {
